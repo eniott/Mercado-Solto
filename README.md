@@ -1,4 +1,4 @@
-## Projeto de PDM em Kotlin - Mercado Solto\
+## Projeto de PDM em Kotlin - Mercado Solto
 
 Alunos:\
 Ênio Ribeiro Durães Coelho\
