@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "381220039117",
-    "project_id": "alunoonline-f673a",
-    "storage_bucket": "alunoonline-f673a.appspot.com"
+    "project_number": "189447915372",
+    "project_id": "mercado-solto",
+    "storage_bucket": "mercado-solto.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:381220039117:android:d162e32e11f8cbd4ac7c84",
+        "mobilesdk_app_id": "1:189447915372:android:8e188463e89beab662d549",
         "android_client_info": {
-          "package_name": "br.iesb.mobile.meuapp"
+          "package_name": "br.iesb.mobile.mercado_solto"
         }
       },
       "oauth_client": [
         {
-          "client_id": "381220039117-7pbeqdttoo2vebe2qu3e78csfvalt0jp.apps.googleusercontent.com",
+          "client_id": "189447915372-lmull5jlham0iq7q3kful9orbe8hd8n7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCN5EeQJrYw3ilyHM-fUoB7PfrSkjVsF5M"
+          "current_key": "AIzaSyCmipoWU4T6FrrZMTTL7Pb1Dkpu_GySBVg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "381220039117-7pbeqdttoo2vebe2qu3e78csfvalt0jp.apps.googleusercontent.com",
+              "client_id": "189447915372-lmull5jlham0iq7q3kful9orbe8hd8n7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

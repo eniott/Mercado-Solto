@@ -10,14 +10,17 @@
         android:id="@+id/tvTituloSignUp"
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:text="Mercado\nSolto"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/mercado"
         android:textAlignment="center"
         android:textColor="#0D7C13"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="235dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoSignUp" />
 
     <ImageView
         android:id="@+id/ivLogoSignUp"
@@ -40,7 +43,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/etPasswordSignUp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +58,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="@string/hint_senha"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/etConfirmPasswordSignUp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,23 +75,23 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="Confirmar a senha"
+        android:hint="@string/hint_confirmar_senha"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btSignUpSignUp"
+        app:layout_constraintBottom_toTopOf="@+id/btRegisterSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordSignUp" />
 
     <Button
-        android:id="@+id/btSignUpSignUp"
+        android:id="@+id/btRegisterSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#169F84"
-        android:text="Cadastrar"
+        android:text="@string/cadastrar"
         app:layout_constraintBottom_toTopOf="@+id/btBackSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -99,9 +102,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#169F84"
-        android:text="Voltar"
+        android:text="@string/voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="671dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
