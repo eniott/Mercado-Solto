@@ -3,6 +3,7 @@ package br.iesb.mobile.mercado_solto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -26,6 +27,18 @@ class MainActivity : AppCompatActivity() {
         btLoginMain.setOnClickListener {
             val email = etEmailMain.text.toString()
             val password = etPasswordMain.text.toString()
+
+            //Impede o App de crashar caso o campo Email ou senha esteja vazio
+            if(TextUtils.isEmpty(email)){
+
+                Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+                return@setOnClickListener;
+            }
+            if(TextUtils.isEmpty(password)){
+
+                Toast.makeText(this,"Please enter your password",Toast.LENGTH_LONG).show();
+                return@setOnClickListener;
+            }
 
             val auth = FirebaseAuth.getInstance()
 
