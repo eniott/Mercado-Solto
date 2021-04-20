@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/verde_botao"
-    android:backgroundTint="@color/verde_botao"
-    tools:context=".view.activities.SplashscreenActivity">
+    tools:context=".view.activities.OnboardingActivity">
 
-    <ImageView
-        android:id="@+id/ivLogoSplashscreen"
-        android:layout_width="261dp"
-        android:layout_height="252dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpOnboarding"
+        android:layout_width="290dp"
+        android:layout_height="551dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mercado_solto" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
