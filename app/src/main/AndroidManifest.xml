@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.iesb.mobile.mercado_solto">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
 
     <application
         android:allowBackup="true"
@@ -9,6 +14,20 @@
         android:roundIcon="@mipmap/mercado_solto"
         android:supportsRtl="true"
         android:theme="@style/Theme.MercadoSolto">
+        <activity android:name=".view.activities.CategoriasActivity"></activity>
+        <activity android:name=".view.activities.PerfilActivity" />
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
         <activity android:name=".view.activities.OnboardingActivity" />
         <activity
             android:name=".view.activities.SplashscreenActivity"
