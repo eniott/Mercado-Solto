@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloMain" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloMain"
+        android:autofillHints="email"/>
 
     <EditText
         android:id="@+id/etPasswordMain"
@@ -50,7 +51,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailMain" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailMain"
+        android:autofillHints="senha"/>
 
     <Button
         android:id="@+id/btLoginMain"

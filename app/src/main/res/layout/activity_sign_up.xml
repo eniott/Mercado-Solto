@@ -30,6 +30,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +51,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloSignUp"
+        android:autofillHints="email" />
+
+
 
     <EditText
         android:id="@+id/etPasswordSignUp"
@@ -65,7 +69,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp"
+        android:autofillHints="senha" />
 
     <EditText
         android:id="@+id/etConfirmPasswordSignUp"
@@ -82,7 +87,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordSignUp"
+        android:autofillHints="Confirmar senha" />
 
     <Button
         android:id="@+id/btRegisterSignUp"
