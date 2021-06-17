@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.iesb.mobile.mercado_solto.R
+import br.iesb.mobile.mercado_solto.view.fragment.ChatbotFragment
 import br.iesb.mobile.mercado_solto.viewmodel.EstabelecimentosViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_maps.*
+import kotlinx.android.synthetic.main.fragment_chatbot.*
 import kotlin.random.Random
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
@@ -51,17 +53,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        btCompletarPerfilHome.setOnClickListener {
-            val chamaperfil = Intent(this, PerfilActivity::class.java)
-            startActivity(chamaperfil)
-        }
-
         val spiner: Spinner = findViewById(R.id.categorias)
 
         val categorias = ArrayList<String>()
         categorias.add("Mercados")
         categorias.add("Restaurantes")
         categorias.add("Roupas")
+        categorias.add("Calçados")
 
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categorias)
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -89,6 +87,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             ) {
                 viewModel.pegar_estabelecimento(categorias[position])
             }
+        }
+
+        btChatHome.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .add(ChatbotFragment(), "chatbot")
+                .commit()
         }
     }
 
