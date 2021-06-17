@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
         loginvm.signup(email, password, confirm_password){ retorno ->
             Toast.makeText(this, retorno[1], Toast.LENGTH_SHORT).show()
             if (retorno[0]=="Ok"){
-                val ir_para_home = Intent(this, Home::class.java)
+                val ir_para_home = Intent(this, MapsActivity::class.java)
                 startActivity(ir_para_home)
             }
         }

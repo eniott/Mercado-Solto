@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
+import br.iesb.mobile.mercado_solto.view.activities.MapsActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
             task_login.addOnCompleteListener { resultado ->
                 if (resultado.isSuccessful){
-                    val ir_para_home = Intent(this, Home::class.java)
+                    val ir_para_home = Intent(this, MapsActivity::class.java)
                     startActivity(ir_para_home)
                 } else {
                     Toast.makeText(this, "E-mail ou senha incorretos.", Toast.LENGTH_LONG).show()
