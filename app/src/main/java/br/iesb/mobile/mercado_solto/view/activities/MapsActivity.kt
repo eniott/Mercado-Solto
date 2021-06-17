@@ -58,10 +58,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val spiner: Spinner = findViewById(R.id.categorias)
 
         val categorias = ArrayList<String>()
+        categorias.add("Farmácias")
         categorias.add("Mercados")
         categorias.add("Restaurantes")
         categorias.add("Roupas")
-        categorias.add("Calçados")
 
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categorias)
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
