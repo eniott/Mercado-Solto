@@ -1,9 +1,11 @@
 package br.iesb.mobile.mercado_solto.view.activities
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -92,8 +94,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         btChatHome.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .add(ChatbotFragment(), "chatbot")
+                .add(R.id.rootMaps, ChatbotFragment(btChatHome), "chatbot")
                 .commit()
+
+            btChatHome.visibility = View.GONE
         }
     }
 

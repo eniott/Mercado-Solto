@@ -1,11 +1,12 @@
 package br.iesb.mobile.mercado_solto.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.iesb.mobile.mercado_solto.R
@@ -15,8 +16,9 @@ import kotlinx.android.synthetic.main.fragment_chatbot.*
 import java.util.*
 import kotlin.random.Random
 
-class ChatbotFragment : Fragment() {
-    private val adapter = activity?.applicationContext?.let { ChatbotAdapter(it) }
+class ChatbotFragment(private val b: Button) : Fragment() {
+    private lateinit var adapter: ChatbotAdapter
+
     private val viewModelC: ChatbotViewModel by lazy {
         ViewModelProvider(this).get(ChatbotViewModel::class.java)
     }
@@ -38,21 +40,36 @@ class ChatbotFragment : Fragment() {
 
         initRecyclerView()
         enviarMensagem.setOnClickListener { enviar() }
+
+        close.setOnClickListener {
+            val f = activity?.supportFragmentManager
+                ?.findFragmentByTag("chatbot")
+
+            if (f != null) {
+                b.visibility = View.VISIBLE
+
+                activity?.supportFragmentManager
+                    ?.beginTransaction()
+                    ?.remove(f)
+                    ?.commit()
+            }
+        }
     }
 
     private fun initRecyclerView() {
+        adapter = activity?.applicationContext?.let { ChatbotAdapter(it) }!!
+        adapter.addMessage("Bem vindo! Me faça uma pergunta", "BOT")
         recyclerViewChat.layoutManager = LinearLayoutManager(activity?.applicationContext)
         recyclerViewChat.adapter = adapter
     }
 
     private fun enviar() {
         val message = mensagemUser.text.toString()
+        adapter.addMessage(message, "USER")
+        inputText.text = ""
 
         viewModelC.verifyEmpty(message) { r ->
             if (r == "OK") {
-                adapter?.addMessage(message, "USER")
-                inputText.text = ""
-
                 val data = Date().toString().substring(0, 10).replace(" ", "")
                 val random = Random.nextInt(10000000, 1000000000)
                 val sessionId = data + random
@@ -62,7 +79,7 @@ class ChatbotFragment : Fragment() {
                     "mercado@pago.com",
                     sessionId
                 ) { chatMessage ->
-                    adapter?.addMessage(chatMessage, "BOT")
+                    adapter.addMessage(chatMessage, "BOT")
                 }
             }
         }
