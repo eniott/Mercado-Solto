@@ -58,7 +58,7 @@ class ChatbotFragment(private val b: Button) : Fragment() {
 
     private fun initRecyclerView() {
         adapter = activity?.applicationContext?.let { ChatbotAdapter(it) }!!
-        adapter.addMessage("Bem vindo! Me faça uma pergunta", "BOT")
+        adapter.addMessage("Oi! Sou seu assistente virtual!", "BOT")
         recyclerViewChat.layoutManager = LinearLayoutManager(activity?.applicationContext)
         recyclerViewChat.adapter = adapter
     }
